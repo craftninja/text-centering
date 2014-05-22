@@ -4,46 +4,39 @@ require_relative '../lib/text_centering'
 describe 'it can center text' do
 
   it 'can center two lines of even length' do
-    line_01 = 'Emily is totally great at coding'
-    line_02 = 'And nice'
-
+    line_01 = '1234'
+    line_02 = '12'
     expected = <<EXPECTED
-Emily is totally great at coding
-            And nice
+1234
+ 12
 EXPECTED
-
-
-    text_centering = TextCentering.new([line_01,line_02])
-    actual = text_centering.centered
-    expect(actual).to eq(expected)
-  end
-  it 'can center two lines of uneven length' do
-    line_01 = 'Emily is totally great at coding'
-    line_02 = 'And nice!'
-
-    expected = <<EXPECTED
-Emily is totally great at coding
-           And nice!
-EXPECTED
-
-
     text_centering = TextCentering.new([line_01,line_02])
     actual = text_centering.centered
     expect(actual).to eq(expected)
   end
 
   it 'can center two lines of uneven length' do
-    line_01 = 'Emily is totally great at coding!'
-    line_02 = 'And nice'
-
+    line_01 = '123456'
+    line_02 = '123'
     expected = <<EXPECTED
-Emily is totally great at coding!
-            And nice
+123456
+ 123
 EXPECTED
-
-
     text_centering = TextCentering.new([line_01,line_02])
     actual = text_centering.centered
     expect(actual).to eq(expected)
   end
+
+  it 'can center two lines of uneven length' do
+    line_01 = '12345'
+    line_02 = '12'
+    expected = <<EXPECTED
+12345
+ 12
+EXPECTED
+    text_centering = TextCentering.new([line_01,line_02])
+    actual = text_centering.centered
+    expect(actual).to eq(expected)
+  end
+
 end

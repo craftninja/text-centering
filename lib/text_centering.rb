@@ -12,7 +12,6 @@ class TextCentering
     longest_string_length
     centered_text = ''
     @lines.each do |line|
-      extra_space = (longest_string_length - line.length) %2
       spaces_to_add = (longest_string_length - line.length) /2
       centered_text << " " * spaces_to_add + "#{line}\n"
     end
