@@ -39,4 +39,16 @@ EXPECTED
     expect(actual).to eq(expected)
   end
 
+  it 'can center two lines of text ignoring any whitespaces at beginning' do
+    line_01 = '1234'
+    line_02 = '    12'
+    expected = <<EXPECTED
+1234
+ 12
+EXPECTED
+    text_centering = TextCentering.new([line_01,line_02])
+    actual = text_centering.centered
+    expect(actual).to eq(expected)
+  end
+
 end

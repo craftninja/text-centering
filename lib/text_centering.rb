@@ -1,7 +1,7 @@
 class TextCentering
 
   def initialize(lines)
-    @lines = lines
+    @lines = lines.map {|line| line.strip }
   end
 
   def centered
